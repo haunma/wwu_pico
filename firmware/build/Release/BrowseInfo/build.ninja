@@ -1,0 +1,120 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\mark\proj\wwu_pico1\firmware\src\DADC.cpp -xcl_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.xcl -macro_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\src\DADC.cpp -D NDEBUG -o C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\ -Oh --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.tmp
+  rspfile_name = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.xcl.rsp
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\mark\proj\wwu_pico1\firmware\src\DGPIO.cpp -xcl_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.xcl -macro_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\src\DGPIO.cpp -D NDEBUG -o C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\ -Oh --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.tmp
+  rspfile_name = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.xcl.rsp
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\mark\proj\wwu_pico1\firmware\src\DI2C.cpp -xcl_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.xcl -macro_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\src\DI2C.cpp -D NDEBUG -o C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\ -Oh --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.tmp
+  rspfile_name = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.xcl.rsp
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\mark\proj\wwu_pico1\firmware\src\DPower.cpp -xcl_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.xcl -macro_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\src\DPower.cpp -D NDEBUG -o C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\ -Oh --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.tmp
+  rspfile_name = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.xcl.rsp
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\mark\proj\wwu_pico1\firmware\src\DRadio.cpp -xcl_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.xcl -macro_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\src\DRadio.cpp -D NDEBUG -o C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\ -Oh --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.tmp
+  rspfile_name = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.xcl.rsp
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\mark\proj\wwu_pico1\firmware\src\interrupts.cpp -xcl_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.xcl -macro_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\src\interrupts.cpp -D NDEBUG -o C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\ -Oh --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.tmp
+  rspfile_name = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.xcl.rsp
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\mark\proj\wwu_pico1\firmware\src\main.cpp -xcl_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.xcl -macro_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\src\main.cpp -D NDEBUG -o C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\ -Oh --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.tmp
+  rspfile_name = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\mark\proj\wwu_pico1\firmware\Si5351-lib\src\si5351.c -xcl_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.xcl -macro_file C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\Si5351-lib\src\si5351.c -D NDEBUG -o C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\ -Oh --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.tmp
+  rspfile_name = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.xcl.rsp
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.pbi : INDEXER C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.xcl |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\src\DADC.cpp
+  flags = -out=C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.pbi -f C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.xcl
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.pbi : INDEXER C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.xcl |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\src\DGPIO.cpp
+  flags = -out=C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.pbi -f C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.xcl
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.pbi : INDEXER C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.xcl |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\src\DI2C.cpp
+  flags = -out=C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.pbi -f C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.xcl
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.pbi : INDEXER C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.xcl |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\src\DPower.cpp
+  flags = -out=C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.pbi -f C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.xcl
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.pbi : INDEXER C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.xcl |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\src\DRadio.cpp
+  flags = -out=C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.pbi -f C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.xcl
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.pbi : INDEXER C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.xcl |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\src\interrupts.cpp
+  flags = -out=C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.pbi -f C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.xcl
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.pbi : INDEXER C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.xcl |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\src\main.cpp
+  flags = -out=C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.pbi -f C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.xcl
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.pbi : INDEXER C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.xcl |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\Si5351-lib\src\si5351.c
+  flags = -out=C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.pbi -f C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.xcl
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1.pbw : MAKEBROWSE C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1.pbd
+  flags = C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1.pbd -output C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1.pbw
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part0.pbi : PDBLINK C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.pbi |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.pbi $
+C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.pbi
+  flags = -M C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part0.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DADC.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DGPIO.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DI2C.pbi
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part1.pbi : PDBLINK C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.pbi |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.pbi $
+C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.pbi
+  flags = -M C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part1.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DPower.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\DRadio.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\interrupts.pbi
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part2.pbi : PDBLINK C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.pbi |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.pbi
+  flags = -M C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part2.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\main.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\si5351.pbi
+
+build C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1.pbd : PDBLINK C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part0.pbi |  $
+C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part1.pbi $
+C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part2.pbi
+  flags = -M C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1.pbd C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part0.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part1.pbi C$:\Users\mark\proj\wwu_pico1\firmware\build\Release\BrowseInfo\wwu_pico1_part2.pbi
+

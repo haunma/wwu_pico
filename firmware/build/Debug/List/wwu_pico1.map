@@ -1,0 +1,400 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.4.327/W64 for ARM                  16/Apr/2022  20:13:40
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Exe\wwu_pico1.out
+#    Map file     =
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\List\wwu_pico1.map
+#    Command line =
+#        -f
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Exe\wwu_pico1.out.rsp
+#        (C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\DADC.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\DGPIO.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\DI2C.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\DPower.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\DRadio.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\DRTC.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\interrupts.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\main.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\si5351.o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\CMSIS\startup_stm32l031xx.o
+#        --no_out_extension -o
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Exe\wwu_pico1.out
+#        --redirect _Scanf=_ScanfSmallNoMb --map
+#        C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\List\wwu_pico1.map
+#        --config C:\Users\mark\proj\wwu_pico1\firmware\build\stm32l031xx.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor                     = *
+__CPP_Exceptions              = Disabled
+__CPP_Language                = C++14
+__CPP_Library                 = DLib
+__CPP_Runtime                 = 1
+__Heap_Handler                = Basic
+__SystemLibrary               = DLib
+__dlib_dynamic_initialization = normal
+__dlib_version                = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'7fff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'1fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section                Kind         Address    Size  Object
+  -------                ----         -------    ----  ------
+"A0":                                            0xc0
+  .intvec                ro code   0x800'0000    0xc0  startup_stm32l031xx.o [2]
+                                 - 0x800'00c0    0xc0
+
+"P1":                                          0x14ef
+  .text                  ro code   0x800'00c0   0x3b8  si5351.o [1]
+  .text                  ro code   0x800'0478   0x1e0  DI2C.o [1]
+  .text                  ro code   0x800'0658    0xe0  I32DivModFast.o [6]
+  .text                  ro code   0x800'0738     0x2  IntDivZer.o [6]
+  .text                  ro code   0x800'073a     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'073c   0x2ac  DRadio.o [1]
+  .text                  ro code   0x800'09e8   0x184  DGPIO.o [1]
+  .text                  ro code   0x800'0b6c   0x24e  DRTC.o [1]
+  .text                  ro code   0x800'0dba     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'0dbc    0x32  I64Mul.o [6]
+  .text                  ro code   0x800'0dee     0x8  abs.o [3]
+  .text                  ro code   0x800'0df6     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'0df8    0x24  ABIassert.o [7]
+  .text                  ro code   0x800'0e1c     0xa  abort.o [3]
+  .text                  ro code   0x800'0e26     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'0e28    0x14  exit.o [7]
+  .text                  ro code   0x800'0e3c   0x1d2  main.o [1]
+  .text                  ro code   0x800'100e     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'1010    0x7c  DADC.o [1]
+  Veneer                 ro code   0x800'108c    0x10  - Linker created -
+  .text                  ro code   0x800'109c    0x72  DPower.o [1]
+  .text                  ro code   0x800'110e     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'1110    0xb4  interrupts.o [1]
+  .rodata                const     0x800'11c4    0xa8  DRadio.o [1]
+  .rodata                const     0x800'126c    0x94  DRadio.o [1]
+  Initializer bytes      const     0x800'1300    0x84  <for P2-1>
+  .text                  ro code   0x800'1384    0x3c  zero_init3.o [6]
+  .rodata                const     0x800'13c0    0x34  DGPIO.o [1]
+  .text                  ro code   0x800'13f4    0x30  copy_init3.o [6]
+  .text                  ro code   0x800'1424    0x28  data_init.o [6]
+  .iar.init_table        const     0x800'144c    0x28  - Linker created -
+  .text                  ro code   0x800'1474    0x20  cmain_call_ctors.o [6]
+  .text                  ro code   0x800'1494    0x18  cppinit.o [3]
+  .text                  ro code   0x800'14ac    0x1e  cmain.o [6]
+  .text                  ro code   0x800'14ca     0x4  low_level_init.o [3]
+  .text                  ro code   0x800'14ce     0x8  exit.o [3]
+  .text                  ro code   0x800'14d6     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'14d8     0xa  cexit.o [6]
+  .text                  ro code   0x800'14e2     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'14e4    0x1c  cstartup_M.o [6]
+  .rodata                const     0x800'1500    0x14  DGPIO.o [1]
+  .rodata                const     0x800'1514    0x10  DADC.o [1]
+  .rodata                const     0x800'1524    0x10  DGPIO.o [1]
+  .rodata                const     0x800'1534    0x10  DGPIO.o [1]
+  .rodata                const     0x800'1544    0x10  DI2C.o [1]
+  .rodata                const     0x800'1554    0x10  DPower.o [1]
+  .rodata                const     0x800'1564    0x10  DRadio.o [1]
+  .rodata                const     0x800'1574    0x10  DRTC.o [1]
+  .text                  ro code   0x800'1584    0x10  startup_stm32l031xx.o [2]
+  SHT$$PREINIT_ARRAY               0x800'1594     0x0  <Block>
+  SHT$$INIT_ARRAY                  0x800'1594     0x4  <Block>
+    .init_array          const     0x800'1594     0x4  main.o [1]
+  __iar_tls$$INIT_ARRAY            0x800'1598     0x0  <Block>
+  .text                  ro code   0x800'1598     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'159a     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'159c     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'159e     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'15a0     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'15a2     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'15a4     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'15a6     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'15a8     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'15aa     0x2  startup_stm32l031xx.o [2]
+  .text                  ro code   0x800'15ac     0x2  startup_stm32l031xx.o [2]
+  .rodata                const     0x800'15ae     0x1  unwind_debug.o [7]
+  .rodata                const     0x800'15af     0x0  zero_init3.o [6]
+  .rodata                const     0x800'15af     0x0  copy_init3.o [6]
+                                 - 0x800'15af  0x14ef
+
+"P2", part 1 of 3:                               0x84
+  P2-1                            0x2000'0000    0x84  <Init block>
+    .textrw              inited   0x2000'0000    0x84  DPower.o [1]
+                                - 0x2000'0084    0x84
+
+"P2", part 2 of 3:                              0x1f4
+  .bss                   zero     0x2000'0084   0x1bc  main.o [1]
+  .bss                   zero     0x2000'0240    0x14  main.o [1]
+  .bss                   zero     0x2000'0254     0x8  main.o [1]
+  .bss                   zero     0x2000'025c     0x8  main.o [1]
+  .bss                   zero     0x2000'0264     0x4  DRadio.o [1]
+  .bss                   zero     0x2000'0268     0x4  interrupts.o [1]
+  .bss                   zero     0x2000'026c     0x4  main.o [1]
+  .bss                   zero     0x2000'0270     0x4  main.o [1]
+  .bss                   zero     0x2000'0274     0x1  main.o [1]
+                                - 0x2000'0275   0x1f1
+
+"P2", part 3 of 3:                              0x400
+  CSTACK                          0x2000'0278   0x400  <Block>
+    CSTACK               uninit   0x2000'0278   0x400  <Block tail>
+                                - 0x2000'0678   0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'15af   0x800'7fff  0x6a51
+  0x2000'0678  0x2000'1fff  0x1988
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1f1:
+          0x2000'0084  0x1f1
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x84:
+           0x800'1300   0x84
+    1 destination range, total size 0x84:
+          0x2000'0000   0x84
+
+Extra (__iar_cstart_call_ctors)
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  rw code  ro data  rw data
+    ------                 -------  -------  -------  -------
+command line/config:
+    ---------------------------------------------------------
+    Total:
+
+C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj: [1]
+    DADC.o                     124                16
+    DGPIO.o                    388               104
+    DI2C.o                     480                16
+    DPower.o                   114      132      148
+    DRTC.o                     590                16
+    DRadio.o                   684               332        4
+    interrupts.o               180                          4
+    main.o                     466                 4      489
+    si5351.o                   952
+    ---------------------------------------------------------
+    Total:                   3'978      132      636      497
+
+C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\CMSIS: [2]
+    startup_stm32l031xx.o      246
+    ---------------------------------------------------------
+    Total:                     246
+
+dl6M_tln.a: [3]
+    abort.o                     10
+    abs.o                        8
+    cppinit.o                   24
+    exit.o                       8
+    low_level_init.o             4
+    ---------------------------------------------------------
+    Total:                      54
+
+dlpprt6M_tl_nc.a: [4]
+    ---------------------------------------------------------
+    Total:
+
+m6M_tl.a: [5]
+    ---------------------------------------------------------
+    Total:
+
+rt6M_tl.a: [6]
+    I32DivModFast.o            224
+    I64Mul.o                    50
+    IntDivZer.o                  2
+    cexit.o                     10
+    cmain.o                     30
+    cmain_call_ctors.o          32
+    copy_init3.o                48
+    cstartup_M.o                28
+    data_init.o                 40
+    zero_init3.o                60
+    ---------------------------------------------------------
+    Total:                     524
+
+shb_l.a: [7]
+    ABIassert.o                 36
+    exit.o                      20
+    unwind_debug.o                                 1
+    ---------------------------------------------------------
+    Total:                      56                 1
+
+    Linker created              16                40    1'024
+-------------------------------------------------------------
+    Grand Total:             4'874      132      677    1'521
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'144c          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'1474          --   Gb  - Linker created -
+?main                    0x800'14ad         Code  Gb  cmain.o [6]
+ADC1_COMP_IRQHandler     0x800'117b    0xa  Code  Gb  interrupts.o [1]
+CSTACK$$Base            0x2000'0278          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0678          --   Gb  - Linker created -
+DADC::DADC()             0x800'1011    0x6  Code  Gb  DADC.o [1]
+DADC::Init()             0x800'1017   0x3e  Code  Gb  DADC.o [1]
+DADC::Wake()             0x800'1055   0x16  Code  Gb  DADC.o [1]
+DGPIO::DGPIO()           0x800'09e9    0x6  Code  Gb  DGPIO.o [1]
+DGPIO::Init()            0x800'09ef  0x136  Code  Gb  DGPIO.o [1]
+DGPIO::Set(DGPIO::GPIOName)
+                         0x800'0b25   0x34  Code  Gb  DGPIO.o [1]
+DGPIO::gpios             0x800'1534   0x10  Data  Gb  DGPIO.o [1]
+DI2C::DI2C()             0x800'0479    0x6  Code  Gb  DI2C.o [1]
+DI2C::Deinit()           0x800'04ef   0x42  Code  Gb  DI2C.o [1]
+DI2C::Init()             0x800'047f   0x70  Code  Gb  DI2C.o [1]
+DI2C::Read(DI2C::Device, unsigned char)
+                         0x800'0597   0x72  Code  Gb  DI2C.o [1]
+DI2C::Write(DI2C::Device, unsigned char, unsigned char)
+                         0x800'0531   0x66  Code  Gb  DI2C.o [1]
+DPower::DPower()         0x800'109d    0xa  Code  Gb  DPower.o [1]
+DPower::HighVDD()        0x800'1109    0x6  Code  Gb  DPower.o [1]
+DPower::Init()           0x800'10a7   0x40  Code  Gb  DPower.o [1]
+DPower::Stop()           0x800'1105    0x4  Code  Gb  DPower.o [1]
+DRTC::ClearAlarm()       0x800'0cf9    0xc  Code  Gb  DRTC.o [1]
+DRTC::ClearPeriodicWake()
+                         0x800'0d3b   0x1e  Code  Gb  DRTC.o [1]
+DRTC::DRTC()             0x800'0b85    0xe  Code  Gb  DRTC.o [1]
+DRTC::Init()             0x800'0b93   0x94  Code  Gb  DRTC.o [1]
+DRTC::LSEFailure()       0x800'0db5    0x6  Code  Gb  DRTC.o [1]
+DRTC::RTCAlarm()         0x800'0d05   0x36  Code  Gb  DRTC.o [1]
+DRTC::SetAlarm(int, int, int, unsigned char, bool)
+                         0x800'0c27   0xd2  Code  Gb  DRTC.o [1]
+DRadio::AsciiToMorse(char)
+                         0x800'07bd   0x3c  Code  Gb  DRadio.o [1]
+DRadio::DRadio()         0x800'075d   0x52  Code  Gb  DRadio.o [1]
+DRadio::Disable()        0x800'07b1    0xc  Code  Gb  DRadio.o [1]
+DRadio::FindSynthParams(Si5351_ConfigTypeDef *, unsigned int, unsigned int, unsigned int)
+                         0x800'0951   0x7c  Code  Gb  DRadio.o [1]
+DRadio::FindSynthParams(Si5351_ConfigTypeDef *, unsigned int, unsigned int, unsigned int)::OldHz
+                        0x2000'0264    0x4  Data  Lc  DRadio.o [1]
+DRadio::Init()           0x800'07af    0x2  Code  Gb  DRadio.o [1]
+DRadio::Tick()           0x800'07fd  0x12a  Code  Gb  DRadio.o [1]
+DRadio::freqs            0x800'11c4   0xa8  Data  Gb  DRadio.o [1]
+Debug                   0x2000'0274    0x1  Data  Gb  main.o [1]
+LED(bool)                0x800'0f9d   0x1e  Code  Gb  main.o [1]
+MorseCode                0x800'126c   0x94  Data  Lc  DRadio.o [1]
+PVD_IRQHandler           0x800'111b   0x1c  Code  Gb  interrupts.o [1]
+RCC_IRQHandler           0x800'1137   0x1a  Code  Gb  interrupts.o [1]
+RTC_IRQHandler           0x800'1151   0x2a  Code  Gb  interrupts.o [1]
+Region$$Table$$Base      0x800'144c          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'1474          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Base    0x800'1594          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Limit   0x800'1598          --   Gb  - Linker created -
+SHT$$PREINIT_ARRAY$$Base
+                         0x800'1594          --   Gb  - Linker created -
+SHT$$PREINIT_ARRAY$$Limit
+                         0x800'1594          --   Gb  - Linker created -
+Si5351_PLLConfig(Si5351_ConfigTypeDef *, Si5351_PLLChannelTypeDef)
+                         0x800'026d  0x208  Code  Gb  si5351.o [1]
+Si5351_ReadRegister(unsigned char)
+                         0x800'00d5   0x10  Code  Gb  si5351.o [1]
+Si5351_StructInit(Si5351_ConfigTypeDef *)
+                         0x800'00e5  0x17e  Code  Gb  si5351.o [1]
+Si5351_WriteRegister(unsigned char, unsigned char)
+                         0x800'00c1   0x14  Code  Gb  si5351.o [1]
+SysTick_Handler          0x800'1111    0xa  Code  Gb  interrupts.o [1]
+SystemInit               0x800'100d    0x2  Code  Gb  main.o [1]
+TIM2_IRQHandler          0x800'1185   0x10  Code  Gb  interrupts.o [1]
+[local to DPower_cpp]::ProgramOptionBOR()
+                        0x2000'0001   0x84  Code  Lc  DPower.o [1]
+[local to DRTC_cpp]::__NVIC_EnableIRQ(IRQn_Type)
+                         0x800'0b6d   0x18  Code  Lc  DRTC.o [1]
+[local to DRadio_cpp]::__NVIC_DisableIRQ(IRQn_Type)
+                         0x800'073d   0x20  Code  Lc  DRadio.o [1]
+__aeabi_assert           0x800'0df9   0x24  Code  Gb  ABIassert.o [7]
+__aeabi_idiv             0x800'0685         Code  Gb  I32DivModFast.o [6]
+__aeabi_idiv0            0x800'0739         Code  Gb  IntDivZer.o [6]
+__aeabi_idivmod          0x800'0685         Code  Gb  I32DivModFast.o [6]
+__aeabi_lmul             0x800'0dbd         Code  Gb  I64Mul.o [6]
+__aeabi_uidiv            0x800'068b         Code  Gb  I32DivModFast.o [6]
+__aeabi_uidivmod         0x800'068b         Code  Gb  I32DivModFast.o [6]
+__call_ctors             0x800'1495   0x18  Code  Gb  cppinit.o [3]
+__cmain                  0x800'14ad         Code  Gb  cmain.o [6]
+__exit                   0x800'0e29   0x14  Code  Gb  exit.o [7]
+__iar_copy_init3         0x800'13f5   0x30  Code  Gb  copy_init3.o [6]
+__iar_cstart_call_ctors
+                         0x800'1475   0x20  Code  Gb  cmain_call_ctors.o [6]
+__iar_data_init3         0x800'1425   0x28  Code  Gb  data_init.o [6]
+__iar_debug_exceptions   0x800'15ae    0x1  Data  Gb  unwind_debug.o [7]
+__iar_program_start      0x800'14e5         Code  Gb  cstartup_M.o [6]
+__iar_tls$$INIT_ARRAY$$Base
+                         0x800'1598          --   Gb  - Linker created -
+__iar_tls$$INIT_ARRAY$$Limit
+                         0x800'1598          --   Gb  - Linker created -
+__iar_zero_init3         0x800'1385   0x3c  Code  Gb  zero_init3.o [6]
+__low_level_init         0x800'14cb    0x4  Code  Gb  low_level_init.o [3]
+__sti__routine           0x800'0e3d   0x28  Code  Lc  main.o [1]
+__vector_table           0x800'0000         Data  Gb  startup_stm32l031xx.o [2]
+_call_main               0x800'14b9         Code  Gb  cmain.o [6]
+_exit                    0x800'14d9         Code  Gb  cexit.o [6]
+abort                    0x800'0e1d    0xa  Code  Gb  abort.o [3]
+abs                      0x800'0def    0x8  Code  Wk  abs.o [3]
+exit                     0x800'14cf    0x8  Code  Gb  exit.o [3]
+g_adc                   0x2000'026c    0x4  Data  Gb  main.o [1]
+g_gpio                  0x2000'0270    0x4  Data  Gb  main.o [1]
+g_i2c                   0x2000'0240   0x14  Data  Gb  main.o [1]
+g_power                 0x2000'0254    0x8  Data  Gb  main.o [1]
+g_radio                 0x2000'0084  0x1bc  Data  Gb  main.o [1]
+g_rtc                   0x2000'025c    0x8  Data  Gb  main.o [1]
+g_sysTicks              0x2000'0268    0x4  Data  Gb  interrupts.o [1]
+main                     0x800'0e65  0x138  Code  Gb  main.o [1]
+
+
+[1] = C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj
+[2] = C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\Obj\CMSIS
+[3] = dl6M_tln.a
+[4] = dlpprt6M_tl_nc.a
+[5] = m6M_tl.a
+[6] = rt6M_tl.a
+[7] = shb_l.a
+
+  4'874 bytes of readonly  code memory
+    132 bytes of readwrite code memory
+    677 bytes of readonly  data memory
+  1'521 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

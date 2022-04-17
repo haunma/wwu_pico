@@ -1,0 +1,10 @@
+C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\BrowseInfo\si5351.pbi: \
+  C:\Users\mark\proj\wwu_pico1\firmware\Si5351-lib\src\si5351.c \
+  C:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\si5351.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Users\mark\proj\wwu_pico1\firmware\build\..\src\DI2C.h

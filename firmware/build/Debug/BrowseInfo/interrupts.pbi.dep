@@ -1,0 +1,19 @@
+C:\Users\mark\proj\wwu_pico1\firmware\build\Debug\BrowseInfo\interrupts.pbi: \
+  C:\Users\mark\proj\wwu_pico1\firmware\src\interrupts.cpp \
+  C:\Users\mark\proj\wwu_pico1\firmware\src\stm32l0xx.h \
+  C:\Users\mark\proj\wwu_pico1\firmware\src\stm32l031xx.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\CMSIS\Core\Include\core_cm0plus.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\CMSIS\Core\Include\cmsis_version.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\CMSIS\Core\Include\cmsis_compiler.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\CMSIS\Core\Include\cmsis_iccarm.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iccarm_builtin.h \
+  C:\Users\mark\proj\wwu_pico1\firmware\src\DPower.h \
+  C:\Users\mark\proj\wwu_pico1\firmware\src\DRadio.h \
+  C:\Users\mark\proj\wwu_pico1\firmware\build\..\Si5351-lib\inc\si5351.h \
+  C:\Users\mark\proj\wwu_pico1\firmware\src\DRTC.h
